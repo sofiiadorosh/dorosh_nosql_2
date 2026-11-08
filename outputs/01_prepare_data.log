@@ -1,0 +1,42 @@
+Читаємо датасет: 0it [00:00, ?it/s]Читаємо датасет: 10000it [00:00, 197776.43it/s]
+
+Завантажено статей: 10000
+
+Розподіл за категоріями (топ-10):
+category
+cs.CV       2244
+cs.LG       2201
+cs.CL       1262
+cs.AI        727
+stat.ML      402
+hep-th       397
+cs.NE        346
+math.PR      325
+q-bio.NC     273
+cs.RO        168
+Name: count, dtype: int64
+
+Розподіл за роками:
+year
+2014    2500
+2018     701
+2020    1200
+2021    1400
+2026    4199
+Name: count, dtype: int64
+
+Довжина анотацій (у словах):
+count    10000.000000
+mean       171.710600
+std         54.903414
+min          8.000000
+25%        134.000000
+50%        172.000000
+75%        210.000000
+max        322.000000
+Name: abstract, dtype: float64
+
+Приклад запису:
+{'id': '2112.01589', 'title': 'InfoLM: A New Metric to Evaluate Summarization & Data2Text Generation', 'abstract': 'Assessing the quality of natural language generation systems through human annotation is very expensive. Additionally, human annotation campaigns are time-consuming and include non-reusable human labour. In practice, researchers rely on automatic metrics as a proxy of quality. In the last decade, many string-based metrics (e.g., BLEU) have been introduced. However, such metrics usually rely on exact matches and thus, do not robustly handle synonyms. In this paper, we introduce InfoLM a family of untrained metrics that can be viewed as a string-based metric that addresses the aforementioned flaws thanks to a pre-trained masked language model. This family of metrics also makes use of information measures allowing the adaptation of InfoLM to various evaluation criteria. Using direct assessment, we demonstrate that InfoLM achieves statistically significant improvement and over $10$ points of correlation gains in many configurations on both summarization and data2text generation.', 'authors': 'Colombo Pierre, Clavel Chloe, Piantanida Pablo', 'year': 2021, 'category': 'cs.CL'}
+
+Збережено в data/arxiv_subset.parquet
