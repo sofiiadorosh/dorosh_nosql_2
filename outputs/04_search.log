@@ -1,0 +1,185 @@
+W1108 16:42:01.877000 29029 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 57200.28it/s]
+
+==============================================================================
+1. СЕМАНТИЧНИЙ ПОШУК
+Запит: "teaching machines to recognize objects in pictures"
+==============================================================================
+
+У запиті немає жодного з термінів 'computer vision', 'object detection',
+'image classification' — збіг має бути за змістом, а не за словами.
+
+  1. [0.8490] Discovering containment: from infants to machines
+     q-bio.NC · 2016 · arXiv:1610.09625
+     Ullman Shimon, Dorfman Nimrod, Harari Daniel
+     Current artificial learning systems can recognize thousands of visual categories, or play Go at a champion"s level, but cannot explain infants learning, in particular the ability to learn complex concepts without guidanc...
+
+  2. [0.8468] Video Action Recognition Using spatio-temporal optical flow video frames
+     cs.CV · 2021 · arXiv:2103.05101
+     Nebisoy Aytekin, Malekzadeh Saber
+     Recognizing human actions based on videos has became one of the most popular areas of research in computer vision in recent years. This area has many applications such as surveillance, robotics, health care, video search...
+
+  3. [0.8459] Image Captioning using Multiple Transformers for Self-Attention   Mechanism
+     cs.CV · 2021 · arXiv:2103.05103
+     Olimov Farrukh, Dubey Shikha, Shrestha Labina, Tin Tran Trung, Jeon Moongu
+     Real-time image captioning, along with adequate precision, is the main challenge of this research field. The present work, Multiple Transformers for Self-Attention Mechanism (MTSM), utilizes multiple transformers to addr...
+
+  4. [0.8444] Classification of Primitive Manufacturing Tasks from Filtered Event Data
+     cs.CV · 2023 · arXiv:2303.09558
+     Duarte Laura, Neto Pedro
+     Collaborative robots are increasingly present in industry to support human activities. However, to make the human-robot collaborative process more effective, there are several challenges to be addressed. Collaborative ro...
+
+  5. [0.8430] Seeing in Words: Learning to Classify through Language Bottlenecks
+     cs.CV · 2023 · arXiv:2307.00028
+     Saifullah Khalid, Wen Yuxin, Geiping Jonas, Goldblum Micah, Goldstein Tom
+     Neural networks for computer vision extract uninterpretable features despite achieving high accuracy on benchmarks. In contrast, humans can explain their predictions using succinct and intuitive descriptions. To incorpor...
+
+==============================================================================
+2. ПОШУК ІЗ ФІЛЬТРАМИ
+Запит: "reinforcement learning agents that learn from rewards"
+==============================================================================
+
+--- Приклад A: year >= 2021 AND category == 'cs.LG' ---
+    filter = {'year': {'$gte': 2021}, 'category': {'$eq': 'cs.LG'}}
+
+  1. [0.8990] Exploring and Addressing Reward Confusion in Offline Preference Learning
+     cs.LG · 2024 · arXiv:2407.16025
+     Chen Xin, Toyer Sam, Shkurti Florian
+     Spurious correlations in a reward model's training data can prevent Reinforcement Learning from Human Feedback (RLHF) from identifying the desired goal and induce unwanted behaviors. This paper shows that offline RLHF is...
+
+  2. [0.8939] Learning Action Translator for Meta Reinforcement Learning on   Sparse-Reward Tasks
+     cs.LG · 2022 · arXiv:2207.09071
+     Guo Yijie, Wu Qiucheng, Lee Honglak
+     Meta reinforcement learning (meta-RL) aims to learn a policy solving a set of training tasks simultaneously and quickly adapting to new tasks. It requires massive amounts of data drawn from training tasks to infer the co...
+
+  3. [0.8813] Robust Multi-Agent Reinforcement Learning by Mutual Information   Regularization
+     cs.LG · 2023 · arXiv:2310.09833
+     Li Simin, Xu Ruixiao, Xiu Jingqiao, Zheng Yuwei, Feng Pu, Yang Yaodong, Liu Xianglong
+     In multi-agent reinforcement learning (MARL), ensuring robustness against unpredictable or worst-case actions by allies is crucial for real-world deployment. Existing robust MARL methods either approximate or enumerate a...
+
+  4. [0.8801] Investigating Compounding Prediction Errors in Learned Dynamics Models
+     cs.LG · 2022 · arXiv:2203.09637
+     Lambert Nathan, Pister Kristofer, Calandra Roberto
+     Accurately predicting the consequences of agents' actions is a key prerequisite for planning in robotic control. Model-based reinforcement learning (MBRL) is one paradigm which relies on the iterative learning and predic...
+
+  5. [0.8791] Psychotherapy AI Companion with Reinforcement Learning Recommendations   and Interpretable Policy Dynamics
+     cs.LG · 2023 · arXiv:2303.09601
+     Lin Baihan, Cecchi Guillermo, Bouneffouf Djallel
+     We introduce a Reinforcement Learning Psychotherapy AI Companion that generates topic recommendations for therapists based on patient responses. The system uses Deep Reinforcement Learning (DRL) to generate multi-objecti...
+
+--- Приклад B: year < 2015, будь-яка категорія ---
+    filter = {'year': {'$lt': 2015}}
+
+  1. [0.8625] Slow Learners are Fast
+     math.OC · 2009 · arXiv:0911.0491
+     Langford John, Smola Alexander, Zinkevich Martin
+     Online learning algorithms have impressive convergence properties when it comes to risk minimization and convex games on very large problems. However, they are inherently sequential in their design which prevents them fr...
+
+  2. [0.8334] Beyond Hebb: Exclusive-OR and Biological Learning
+     adap-org · 1999 · arXiv:adap-org/9909005
+     Klemm Konstantin, Bornholdt Stefan, Schuster Heinz Georg
+     A learning algorithm for multilayer neural networks based on biologically plausible mechanisms is studied. Motivated by findings in experimental neurobiology, we consider synaptic averaging in the induction of plasticity...
+
+  3. [0.8322] The hippocampal-striatal circuit for goal-directed and habitual choice
+     q-bio.NC · 2014 · arXiv:1412.2818
+     Chersi Fabian
+     It is now widely accepted that one of the roles of the hippocampus is to maintain episodic spatial representations, while parallel striatal pathways contribute to both declarative and procedural value computations by enc...
+
+  4. [0.8281] Physicists attempt to scale the ivory towers of finance
+     adap-org · 1999 · arXiv:adap-org/9912002
+     Farmer J. Doyne
+     Physicists have recently begun doing research in finance, and even though this movement is less than five years old, interesting and useful contributions have already emerged. This article reviews these developments in f...
+
+  5. [0.8258] Markov models of macrosystems
+     math.PR · 2014 · arXiv:1412.2720
+     Gasnikov Alexander
+     We collect different examples reflect Bolzman--Jaynes theory of maximum entropy principle. This principle proposed that equillibrium of macrosystem (most probable macrostate of the invariant measure of macrosystem) can b...
+
+--- Для порівняння: той самий запит без фільтрів ---
+
+  1. [0.9047] Negative Learning Rates and P-Learning
+     cs.AI · 2016 · arXiv:1603.08253
+     Merrill Devon
+     We present a method of training a differentiable function approximator for a regression task using negative examples. We effect this training using negative learning rates. We also show how this method can be used to per...
+
+  2. [0.8990] Exploring and Addressing Reward Confusion in Offline Preference Learning
+     cs.LG · 2024 · arXiv:2407.16025
+     Chen Xin, Toyer Sam, Shkurti Florian
+     Spurious correlations in a reward model's training data can prevent Reinforcement Learning from Human Feedback (RLHF) from identifying the desired goal and induce unwanted behaviors. This paper shows that offline RLHF is...
+
+  3. [0.8953] On Generalization and Distributional Update for Mimicking Observations   with Adequate Exploration
+     stat.ML · 2025 · arXiv:2501.12785
+     Zhou Yirui, Liu Xiaowei, Zhang Xiaofeng, Zhang Yangchun
+     This paper tackles the efficiency and stability issues in learning from observations (LfO). We commence by investigating how reward functions and policies generalize in LfO. Subsequently, the built-in reinforcement learn...
+
+  4. [0.8939] Learning Action Translator for Meta Reinforcement Learning on   Sparse-Reward Tasks
+     cs.LG · 2022 · arXiv:2207.09071
+     Guo Yijie, Wu Qiucheng, Lee Honglak
+     Meta reinforcement learning (meta-RL) aims to learn a policy solving a set of training tasks simultaneously and quickly adapting to new tasks. It requires massive amounts of data drawn from training tasks to infer the co...
+
+  5. [0.8934] Comparing Deep Reinforcement Learning and Evolutionary Methods in   Continuous Control
+     cs.LG · 2017 · arXiv:1712.00006
+     Zhang Shangtong, Zaiane Osmar R.
+     Reinforcement Learning and the Evolutionary Strategy are two major approaches in addressing complicated control problems. Both are strong contenders and have their own devotee communities. Both groups have been very acti...
+
+--- Порівняння видач ---
+  без фільтра            роки: 2016-2025  категорії: cs.AI,cs.LG,stat.ML    score: 0.893-0.905
+  A (>=2021, cs.LG)      роки: 2022-2024  категорії: cs.LG                  score: 0.879-0.899
+  B (<2015)              роки: 1999-2014  категорії: adap-org,math.OC,math.PR,q-bio.NC score: 0.826-0.863
+
+  Перетин A і B:            0 документів
+  Перетин 'без фільтра' і A: 2 документів
+  Перетин 'без фільтра' і B: 0 документів
+
+==============================================================================
+3. ПОРІВНЯННЯ МЕТРИК
+Запит: "teaching machines to recognize objects in pictures"
+==============================================================================
+
+Ембеддинги: (10000, 768), норма запиту = 1.000000
+Норми документів: min=1.000000, max=1.000000
+
+--- COSINE SIMILARITY (більше = краще) ---
+  1. [cos=+0.8491] Discovering containment: from infants to machines
+     q-bio.NC · 2016 · arXiv:1610.09625
+  2. [cos=+0.8468] Video Action Recognition Using spatio-temporal optical flow video frames
+     cs.CV · 2021 · arXiv:2103.05101
+  3. [cos=+0.8459] Image Captioning using Multiple Transformers for Self-Attention   Mechan
+     cs.CV · 2021 · arXiv:2103.05103
+  4. [cos=+0.8449] Classification of Primitive Manufacturing Tasks from Filtered Event Data
+     cs.CV · 2023 · arXiv:2303.09558
+  5. [cos=+0.8430] Seeing in Words: Learning to Classify through Language Bottlenecks
+     cs.CV · 2023 · arXiv:2307.00028
+
+--- DOT PRODUCT (більше = краще) ---
+  1. [dot=+0.8491] Discovering containment: from infants to machines
+     q-bio.NC · 2016 · arXiv:1610.09625
+  2. [dot=+0.8468] Video Action Recognition Using spatio-temporal optical flow video frames
+     cs.CV · 2021 · arXiv:2103.05101
+  3. [dot=+0.8459] Image Captioning using Multiple Transformers for Self-Attention   Mechan
+     cs.CV · 2021 · arXiv:2103.05103
+  4. [dot=+0.8449] Classification of Primitive Manufacturing Tasks from Filtered Event Data
+     cs.CV · 2023 · arXiv:2303.09558
+  5. [dot=+0.8430] Seeing in Words: Learning to Classify through Language Bottlenecks
+     cs.CV · 2023 · arXiv:2307.00028
+
+--- L2 DISTANCE (менше = краще) ---
+  1. [L2=+0.5494] Discovering containment: from infants to machines
+     q-bio.NC · 2016 · arXiv:1610.09625
+  2. [L2=+0.5536] Video Action Recognition Using spatio-temporal optical flow video frames
+     cs.CV · 2021 · arXiv:2103.05101
+  3. [L2=+0.5552] Image Captioning using Multiple Transformers for Self-Attention   Mechan
+     cs.CV · 2021 · arXiv:2103.05103
+  4. [L2=+0.5570] Classification of Primitive Manufacturing Tasks from Filtered Event Data
+     cs.CV · 2023 · arXiv:2303.09558
+  5. [L2=+0.5604] Seeing in Words: Learning to Classify through Language Bottlenecks
+     cs.CV · 2023 · arXiv:2307.00028
+
+--- Порівняння ---
+  top-5 cosine == top-5 dot?  True
+  top-5 cosine == top-5 L2?   True
+  max |cosine - dot| по всьому корпусу: 1.192e-07
+  max |L2 - sqrt(2-2*cos)| :            2.980e-07
+  => для нормалізованих векторів L2 — монотонно спадна функція від cosine,
+     тому порядок top-k збігається (з точністю до похибки float32).

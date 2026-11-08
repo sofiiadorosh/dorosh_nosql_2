@@ -1,42 +1,47 @@
-Читаємо датасет: 0it [00:00, ?it/s]Читаємо датасет: 10000it [00:00, 197776.43it/s]
+Читаємо датасет: 0it [00:00, ?it/s]Читаємо датасет: 10000it [00:00, 159289.06it/s]
 
 Завантажено статей: 10000
 
 Розподіл за категоріями (топ-10):
 category
-cs.CV       2244
-cs.LG       2201
-cs.CL       1262
-cs.AI        727
-stat.ML      402
-hep-th       397
-cs.NE        346
-math.PR      325
-q-bio.NC     273
-cs.RO        168
+hep-ph      589
+cs.CV       426
+cs.LG       393
+quant-ph    345
+astro-ph    339
+hep-th      265
+cond-mat    251
+cs.CL       247
+math.AP     212
+math.PR     209
 Name: count, dtype: int64
 
 Розподіл за роками:
 year
-2014    2500
-2018     701
-2020    1200
-2021    1400
-2026    4199
+2016    502
+2017    495
+2018    493
+2019    494
+2020    758
+2021    752
+2022    754
+2023    779
+2024    985
+2025    246
 Name: count, dtype: int64
 
 Довжина анотацій (у словах):
 count    10000.000000
-mean       171.710600
-std         54.903414
-min          8.000000
-25%        134.000000
-50%        172.000000
-75%        210.000000
-max        322.000000
+mean       144.048700
+std         63.577031
+min          6.000000
+25%         96.000000
+50%        141.000000
+75%        187.000000
+max        497.000000
 Name: abstract, dtype: float64
 
 Приклад запису:
-{'id': '2112.01589', 'title': 'InfoLM: A New Metric to Evaluate Summarization & Data2Text Generation', 'abstract': 'Assessing the quality of natural language generation systems through human annotation is very expensive. Additionally, human annotation campaigns are time-consuming and include non-reusable human labour. In practice, researchers rely on automatic metrics as a proxy of quality. In the last decade, many string-based metrics (e.g., BLEU) have been introduced. However, such metrics usually rely on exact matches and thus, do not robustly handle synonyms. In this paper, we introduce InfoLM a family of untrained metrics that can be viewed as a string-based metric that addresses the aforementioned flaws thanks to a pre-trained masked language model. This family of metrics also makes use of information measures allowing the adaptation of InfoLM to various evaluation criteria. Using direct assessment, we demonstrate that InfoLM achieves statistically significant improvement and over $10$ points of correlation gains in many configurations on both summarization and data2text generation.', 'authors': 'Colombo Pierre, Clavel Chloe, Piantanida Pablo', 'year': 2021, 'category': 'cs.CL'}
+{'id': '2103.05196', 'title': 'A Learning-Based Computational Impact Time Guidance', 'abstract': 'This paper investigates the problem of impact-time-control and proposes a learning-based computational guidance algorithm to solve this problem. The proposed guidance algorithm is developed based on a general prediction-correction concept: the exact time-to-go under proportional navigation guidance with realistic aerodynamic characteristics is estimated by a deep neural network and a biased command to nullify the impact time error is developed by utilizing the emerging reinforcement learning techniques. The deep neural network is augmented into the reinforcement learning block to resolve the issue of sparse reward that has been observed in typical reinforcement learning formulation. Extensive numerical simulations are conducted to support the proposed algorithm.', 'authors': 'Liu Zichao, Wang Jiang, He Shaoming, Shin Hyo-Sang, Tsourdos Antonios', 'year': 2021, 'category': 'cs.LG'}
 
 Збережено в data/arxiv_subset.parquet

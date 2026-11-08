@@ -88,13 +88,22 @@ def reciprocal_rank_fusion(rankings: list[list[int]], k: int = RRF_K) -> list[tu
     return sorted(scores.items(), key=lambda x: -x[1])
 
 
-def search_hybrid(query: str, top_k: int = TOP_K, k: int = RRF_K):
-    bm = search_bm25(query, top_k)
-    vec = search_vector(query, top_k)
+def fuse(bm, vec, k: int = RRF_K):
+    """
+    Зливає вже готові видачі BM25 і вектора. Винесено окремо від пошуку
+    навмисно: для порівняння різних k не треба повторно ходити в Pinecone
+    і переганяти запит через модель — змінюється лише спосіб злиття.
+    """
     fused = reciprocal_rank_fusion([[d for d, _ in bm], [d for d, _ in vec]], k=k)
     bm_rank = {d: r for r, (d, _) in enumerate(bm, 1)}
     vec_rank = {d: r for r, (d, _) in enumerate(vec, 1)}
-    return [(d, s, bm_rank.get(d), vec_rank.get(d)) for d, s in fused], bm, vec
+    return [(d, s, bm_rank.get(d), vec_rank.get(d)) for d, s in fused]
+
+
+def search_hybrid(query: str, top_k: int = TOP_K, k: int = RRF_K):
+    bm = search_bm25(query, top_k)
+    vec = search_vector(query, top_k)
+    return fuse(bm, vec, k), bm, vec
 
 
 # ============================================================================
@@ -161,7 +170,7 @@ for label, query in QUERIES:
     # --- Вплив параметра k -------------------------------------------------
     print(f"\n  --- Вплив k у RRF (топ-3) ---")
     for k in (1, 10, 60, 1000):
-        fused, _, _ = search_hybrid(query, k=k)
+        fused = fuse(bm, vec, k)
         titles = " | ".join(df.iloc[d]["title"][:26] for d, _, _, _ in fused[:3])
         print(f"    k={k:>4}: {titles}")
 

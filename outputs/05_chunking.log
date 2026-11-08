@@ -1,0 +1,182 @@
+W1108 16:42:19.679000 29070 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 62186.45it/s]
+==============================================================================
+1. ВИБІРКА: 30 статей із найдовшими анотаціями
+==============================================================================
+Довжина анотацій (слів): min=303, max=497, median=312
+Для порівняння, по всьому корпусу: median=141, max=497
+
+Топ-5 найдовших:
+   497 слів · arXiv:2303.09399 · Main Concepts and Principles of Political Economy -- Product
+   336 слів · arXiv:1307.0490 · The small noise limit of order-based diffusion processes
+   330 слів · arXiv:2203.09743 · The Visit of Prof. Hideki Yukawa to Kochi to Attend the Unve
+   326 слів · arXiv:2211.08283 · The RED-BLUE SEPARATION problem on graphs
+   322 слів · arXiv:2303.09637 · Origin of the diffuse 4-8 keV emission in M82
+
+==============================================================================
+2. РОЗБИТТЯ НА ЧАНКИ (size=80 слів, overlap=20 для fixed)
+==============================================================================
+
+--- FIXED ---
+  чанків усього:          160
+  слів у чанку:           min=21, max=80, avg=76.2
+  починається з середини речення: 122/160 (76%)
+  обривається на середині речення: 128/160 (80%)
+
+--- SEMANTIC ---
+  чанків усього:          155
+  слів у чанку:           min=22, max=126, avg=61.9
+  починається з середини речення: 0/155 (0%)
+  обривається на середині речення: 1/155 (1%)
+
+--- Приклад: та сама стаття, різні стратегії ---
+
+  [fixed] перші 2 чанки статті arXiv:2303.09399:
+    #0 (80 слів): ...This book starts from the basic questions that had been raised by the founders of Economic theory, Smith, Ricardo, and Marx: what makes the value of c...
+    #1 (80 слів): ...of exchange, but also because of a confusion made between values and prices, and wrong views of what production really is and the role of fixed capita...
+
+  [semantic] перші 2 чанки статті arXiv:2303.09399:
+    #0 (39 слів): ...This book starts from the basic questions that had been raised by the founders of Economic theory, Smith, Ricardo, and Marx: what makes the value of c...
+    #1 (48 слів): ...The answers that these economists had provided were mostly wrong, above all by defining the equivalence of commodities at the level of exchange, but a...
+
+--- Вплив розміру overlap (стратегія fixed, size=80 слів) ---
+   overlap |  чанків |  слів усього |  надлишок
+  ---------+---------+--------------+----------
+         0 |     130 |         9598 |     1.00x
+        10 |     152 |        10818 |     1.13x
+        20 |     160 |        12198 |     1.27x
+        40 |     222 |        17278 |     1.80x
+        60 |     406 |        32158 |     3.35x
+
+==============================================================================
+3-5. ІНДЕКСИ PINECONE ДЛЯ ЧАНКІВ
+==============================================================================
+  створюємо індекс 'arxiv-chunks-fixed' ...
+  створюємо індекс 'arxiv-chunks-semantic' ...
+Batches:   0%|          | 0/3 [00:00<?, ?it/s]Batches:  33%|███▎      | 1/3 [00:00<00:01,  1.74it/s]Batches:  67%|██████▋   | 2/3 [00:01<00:00,  1.93it/s]Batches: 100%|██████████| 3/3 [00:01<00:00,  2.69it/s]Batches: 100%|██████████| 3/3 [00:01<00:00,  2.40it/s]
+Upsert -> arxiv-chunks-fixed:   0%|          | 0/2 [00:00<?, ?it/s]Upsert -> arxiv-chunks-fixed:  50%|█████     | 1/2 [00:01<00:01,  1.90s/it]Upsert -> arxiv-chunks-fixed: 100%|██████████| 2/2 [00:02<00:00,  1.01s/it]Upsert -> arxiv-chunks-fixed: 100%|██████████| 2/2 [00:02<00:00,  1.14s/it]
+  в індексі 'arxiv-chunks-fixed': 160 векторів
+Batches:   0%|          | 0/3 [00:00<?, ?it/s]Batches:  33%|███▎      | 1/3 [00:00<00:00,  2.07it/s]Batches:  67%|██████▋   | 2/3 [00:00<00:00,  2.50it/s]Batches: 100%|██████████| 3/3 [00:01<00:00,  3.07it/s]Batches: 100%|██████████| 3/3 [00:01<00:00,  2.83it/s]
+Upsert -> arxiv-chunks-semantic:   0%|          | 0/2 [00:00<?, ?it/s]Upsert -> arxiv-chunks-semantic:  50%|█████     | 1/2 [00:02<00:02,  2.46s/it]Upsert -> arxiv-chunks-semantic: 100%|██████████| 2/2 [00:03<00:00,  1.56s/it]Upsert -> arxiv-chunks-semantic: 100%|██████████| 2/2 [00:03<00:00,  1.70s/it]
+  в індексі 'arxiv-chunks-semantic': 155 векторів
+
+==============================================================================
+6. ПОШУК ПО ЧАНКАХ
+==============================================================================
+
+──────────────────────────────────────────────────────────────────────────────
+Запит: "neural network training on large datasets"
+──────────────────────────────────────────────────────────────────────────────
+
+  --- FIXED ---
+  1. [0.8116] Can You Fool AI by Doing a 180? $\unicode{x2013}$ A Case Study
+     чанк #1 · arXiv:2207.09085 · cs.CL · 2022
+     "works to authors if in the course of years they have undergone a major psychological transition. Secondly, and from the point of view of the evolution of an author's ethi..."
+  2. [0.8070] A structure theorem for rooted binary phylogenetic networks an
+     чанк #4 · arXiv:1811.05849 · math.CO · 2018
+     "objective function. All algorithms proposed here are optimal in terms of time complexity. Our results do not only imply and unify various known results, but also answer m..."
+  3. [0.8036] A structure theorem for rooted binary phylogenetic networks an
+     чанк #0 · arXiv:1811.05849 · math.CO · 2018
+     "Attempting to recognize a tree inside a phylogenetic network is a fundamental undertaking in evolutionary analysis. In the last few years, therefore, tree-based phylogene..."
+  4. [0.8009] Using Minimum Path Cover to Boost Dynamic Programming on DAGs:
+     чанк #4 · arXiv:1705.08754 · cs.DS · 2017
+     "generally produces algorithms that are slower than their counterparts on sequences only by a factor $k$. Our technique can be applied, for example, to the classical longe..."
+  5. [0.7929] Can You Fool AI by Doing a 180? $\unicode{x2013}$ A Case Study
+     чанк #2 · arXiv:2207.09085 · cs.CL · 2022
+     "analysis task using a text classifier based on a pre-trained transformer model and a baseline method relying on conventional similarity metrics. For the test set, we chos..."
+
+  --- SEMANTIC ---
+  1. [0.8143] Can You Fool AI by Doing a 180? $\unicode{x2013}$ A Case Study
+     чанк #1 · arXiv:2207.09085 · cs.CL · 2022
+     "Secondly, and from the point of view of the evolution of an author's ethical values, we checked what it would mean if the authorship attribution system encounters difficu..."
+  2. [0.8131] Using Minimum Path Cover to Boost Dynamic Programming on DAGs:
+     чанк #4 · arXiv:1705.08754 · cs.DS · 2017
+     "We also implemented the new co-linear chaining approach. Experiments on splicing graphs show that the new method is efficient also in practice...."
+  3. [0.8019] A structure theorem for rooted binary phylogenetic networks an
+     чанк #0 · arXiv:1811.05849 · math.CO · 2018
+     "Attempting to recognize a tree inside a phylogenetic network is a fundamental undertaking in evolutionary analysis. In the last few years, therefore, tree-based phylogene..."
+  4. [0.7999] A structure theorem for rooted binary phylogenetic networks an
+     чанк #4 · arXiv:1811.05849 · math.CO · 2018
+     "All algorithms proposed here are optimal in terms of time complexity. Our results do not only imply and unify various known results, but also answer many open questions a..."
+  5. [0.7887] Using Minimum Path Cover to Boost Dynamic Programming on DAGs:
+     чанк #3 · arXiv:1705.08754 · cs.DS · 2017
+     "This is enabled by our minimum path cover algorithm, and works by mimicking the DP algorithm for sequences on each path of the minimum path cover. This technique generall..."
+
+──────────────────────────────────────────────────────────────────────────────
+Запит: "statistical guarantees and theoretical bounds"
+──────────────────────────────────────────────────────────────────────────────
+
+  --- FIXED ---
+  1. [0.8294] Balanced Allocations with Incomplete Information: The Power of
+     чанк #4 · arXiv:2107.03916 · cs.DM · 2021
+     "result for $k$ queries implies (i) new bounds for the $(1+\beta)$-process introduced by Peres et al (2015), (ii) new bounds for the graphical balanced allocation process..."
+  2. [0.8208] Balanced Allocations with Incomplete Information: The Power of
+     чанк #5 · arXiv:2107.03916 · cs.DM · 2021
+     "novel aspect of our proofs is the use of multiple super-exponential potential functions, which might be of use in future work...."
+  3. [0.8139] A structure theorem for rooted binary phylogenetic networks an
+     чанк #4 · arXiv:1811.05849 · math.CO · 2018
+     "objective function. All algorithms proposed here are optimal in terms of time complexity. Our results do not only imply and unify various known results, but also answer m..."
+  4. [0.8119] Breaking the Metric Voting Distortion Barrier
+     чанк #2 · arXiv:2306.17838 · cs.GT · 2023
+     "finding optimal deterministic voting rules with metric distortion $3$. However, for randomized voting rules, there is still a gap in our understanding: Even though the be..."
+  5. [0.8107] Dynamic Pricing and Learning under the Bass Model
+     чанк #3 · arXiv:2103.05199 · cs.LG · 2021
+     "algorithm that satisfies a high probability regret guarantee of order $\tilde O(m^{2/3})$; where the market size $m$ is known a priori. Moreover, we show that no algorith..."
+
+  --- SEMANTIC ---
+  1. [0.8300] Dynamic Pricing and Learning under the Bass Model
+     чанк #3 · arXiv:2103.05199 · cs.LG · 2021
+     "Our main contribution is the development of an algorithm that satisfies a high probability regret guarantee of order $\tilde O(m^{2/3})$; where the market size $m$ is kno..."
+  2. [0.8247] Balanced Allocations with Incomplete Information: The Power of
+     чанк #4 · arXiv:2107.03916 · cs.DM · 2021
+     "Further, this result for $k$ queries implies (i) new bounds for the $(1+\beta)$-process introduced by Peres et al (2015), (ii) new bounds for the graphical balanced alloc..."
+  3. [0.8159] Balanced Allocations with Incomplete Information: The Power of
+     чанк #5 · arXiv:2107.03916 · cs.DM · 2021
+     "One novel aspect of our proofs is the use of multiple super-exponential potential functions, which might be of use in future work...."
+  4. [0.8157] Breaking the Metric Voting Distortion Barrier
+     чанк #2 · arXiv:2306.17838 · cs.GT · 2023
+     "However, for randomized voting rules, there is still a gap in our understanding: Even though the best lower bound is $2.112$, the best upper bound is still $3$, attained..."
+  5. [0.8148] A structure theorem for rooted binary phylogenetic networks an
+     чанк #4 · arXiv:1811.05849 · math.CO · 2018
+     "All algorithms proposed here are optimal in terms of time complexity. Our results do not only imply and unify various known results, but also answer many open questions a..."
+
+──────────────────────────────────────────────────────────────────────────────
+Запит: "experimental evaluation on benchmark datasets"
+──────────────────────────────────────────────────────────────────────────────
+
+  --- FIXED ---
+  1. [0.8368] Balanced Allocations with Incomplete Information: The Power of
+     чанк #5 · arXiv:2107.03916 · cs.DM · 2021
+     "novel aspect of our proofs is the use of multiple super-exponential potential functions, which might be of use in future work...."
+  2. [0.8332] Using Minimum Path Cover to Boost Dynamic Programming on DAGs:
+     чанк #4 · arXiv:1705.08754 · cs.DS · 2017
+     "generally produces algorithms that are slower than their counterparts on sequences only by a factor $k$. Our technique can be applied, for example, to the classical longe..."
+  3. [0.8324] Can You Fool AI by Doing a 180? $\unicode{x2013}$ A Case Study
+     чанк #1 · arXiv:2207.09085 · cs.CL · 2022
+     "works to authors if in the course of years they have undergone a major psychological transition. Secondly, and from the point of view of the evolution of an author's ethi..."
+  4. [0.8233] Can You Fool AI by Doing a 180? $\unicode{x2013}$ A Case Study
+     чанк #2 · arXiv:2207.09085 · cs.CL · 2022
+     "analysis task using a text classifier based on a pre-trained transformer model and a baseline method relying on conventional similarity metrics. For the test set, we chos..."
+  5. [0.8182] A structure theorem for rooted binary phylogenetic networks an
+     чанк #4 · arXiv:1811.05849 · math.CO · 2018
+     "objective function. All algorithms proposed here are optimal in terms of time complexity. Our results do not only imply and unify various known results, but also answer m..."
+
+  --- SEMANTIC ---
+  1. [0.8520] Using Minimum Path Cover to Boost Dynamic Programming on DAGs:
+     чанк #4 · arXiv:1705.08754 · cs.DS · 2017
+     "We also implemented the new co-linear chaining approach. Experiments on splicing graphs show that the new method is efficient also in practice...."
+  2. [0.8399] Can You Fool AI by Doing a 180? $\unicode{x2013}$ A Case Study
+     чанк #1 · arXiv:2207.09085 · cs.CL · 2022
+     "Secondly, and from the point of view of the evolution of an author's ethical values, we checked what it would mean if the authorship attribution system encounters difficu..."
+  3. [0.8282] Using Minimum Path Cover to Boost Dynamic Programming on DAGs:
+     чанк #3 · arXiv:1705.08754 · cs.DS · 2017
+     "This is enabled by our minimum path cover algorithm, and works by mimicking the DP algorithm for sequences on each path of the minimum path cover. This technique generall..."
+  4. [0.8282] Balanced Allocations with Incomplete Information: The Power of
+     чанк #5 · arXiv:2107.03916 · cs.DM · 2021
+     "One novel aspect of our proofs is the use of multiple super-exponential potential functions, which might be of use in future work...."
+  5. [0.8176] A structure theorem for rooted binary phylogenetic networks an
+     чанк #1 · arXiv:1811.05849 · math.CO · 2018
+     "In this paper, we provide a general framework for solving those various old or new problems from a coherent perspective, rather than analyzing the complexity of each indi..."
+
+Готово.

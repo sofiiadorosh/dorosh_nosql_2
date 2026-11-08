@@ -1,0 +1,164 @@
+W1108 16:43:04.970000 29150 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 46442.60it/s]
+Будуємо BM25-індекс ...
+  документів: 10000, середня довжина: 163 токенів
+  УВАГА: за умовою індексуються лише title + abstract — поле authors
+  у BM25-документ НЕ входить (це важливо для запиту за іменем автора).
+
+
+==============================================================================
+ЗАПИТ (точний термін): "BERT fine-tuning"
+==============================================================================
+
+--- BM25 (топ-5) ---
+  1. [bm25=23.6791] Portuguese Named Entity Recognition using BERT-CRF
+     cs.CL · 2019 · arXiv:1909.10649
+  2. [bm25=17.5549] Like a Baby: Visually Situated Neural Language Acquisition
+     cs.CL · 2018 · arXiv:1805.11546
+  3. [bm25=15.6831] Instruction Fine-Tuning: Does Prompt Loss Matter?
+     cs.LG · 2024 · arXiv:2401.13586
+  4. [bm25=15.5334] On the Importance of Data Size in Probing Fine-tuned Models
+     cs.CL · 2022 · arXiv:2203.09627
+  5. [bm25=14.9567] A natural SM-like 126 GeV Higgs via non-decoupling D-terms
+     hep-ph · 2014 · arXiv:1412.2765
+
+--- ВЕКТОРНИЙ / Pinecone (топ-5) ---
+  1. [cos=0.8656] Developing a Successful Bomberman Agent
+     cs.AI · 2022 · arXiv:2203.09608
+  2. [cos=0.8626] Finetuning Foundation Models for Joint Analysis Optimization
+     hep-ex · 2024 · arXiv:2401.13536
+  3. [cos=0.8582] Comparing Deep Reinforcement Learning and Evolutionary Methods in 
+     cs.LG · 2017 · arXiv:1712.00006
+  4. [cos=0.8579] Loaded DiCE: Trading off Bias and Variance in Any-Order Score Func
+     cs.LG · 2019 · arXiv:1909.10549
+  5. [cos=0.8502] The Definitive Guide to Policy Gradients in Deep Reinforcement Lea
+     cs.LG · 2024 · arXiv:2401.13662
+
+--- ГІБРИДНИЙ RRF, k=60 (топ-5) ---
+  1. [RRF=0.01639] Portuguese Named Entity Recognition using BERT-CRF
+     cs.CL · 2019 · arXiv:1909.10649   (BM25 #1 / —)
+  2. [RRF=0.01639] Developing a Successful Bomberman Agent
+     cs.AI · 2022 · arXiv:2203.09608   (— / vec #1)
+  3. [RRF=0.01613] Like a Baby: Visually Situated Neural Language Acquisition
+     cs.CL · 2018 · arXiv:1805.11546   (BM25 #2 / —)
+  4. [RRF=0.01613] Finetuning Foundation Models for Joint Analysis Optimization
+     hep-ex · 2024 · arXiv:2401.13536   (— / vec #2)
+  5. [RRF=0.01587] Instruction Fine-Tuning: Does Prompt Loss Matter?
+     cs.LG · 2024 · arXiv:2401.13586   (BM25 #3 / —)
+
+  Перетин BM25 ∩ вектор (топ-5): 0
+  Документів у гібридному топ-5, яких немає в жодному з топ-5: 0
+
+  --- Вплив k у RRF (топ-3) ---
+    k=   1: Portuguese Named Entity Re | Developing a Successful Bo | Like a Baby: Visually Situ
+    k=  10: Portuguese Named Entity Re | Developing a Successful Bo | Like a Baby: Visually Situ
+    k=  60: Portuguese Named Entity Re | Developing a Successful Bo | Like a Baby: Visually Situ
+    k=1000: Portuguese Named Entity Re | Developing a Successful Bo | Like a Baby: Visually Situ
+
+==============================================================================
+ЗАПИТ (ім'я автора): "Yann LeCun convolutional networks"
+==============================================================================
+
+--- BM25 (топ-5) ---
+  1. [bm25=14.8565] Global Convergence of Deep Networks with One Wide Layer Followed b
+     cs.LG · 2020 · arXiv:2002.07867
+  2. [bm25=12.8571] Doubly Convolutional Neural Networks
+     cs.LG · 2016 · arXiv:1610.09716
+  3. [bm25=12.3615] Indirect Adversarial Attacks via Poisoning Neighbors for Graph   C
+     cs.LG · 2020 · arXiv:2002.08012
+  4. [bm25=11.4194] Adaptive Detrending to Accelerate Convolutional Gated Recurrent Un
+     cs.CV · 2017 · arXiv:1705.08764
+  5. [bm25=11.1568] Convolutional Networks with Adaptive Inference Graphs
+     cs.CV · 2017 · arXiv:1711.11503
+
+--- ВЕКТОРНИЙ / Pinecone (топ-5) ---
+  1. [cos=0.8867] DenseNet Models for Tiny ImageNet Classification
+     cs.CV · 2019 · arXiv:1904.10429
+  2. [cos=0.8814] Advanced deep architecture pruning using single filter performance
+     cs.LG · 2025 · arXiv:2501.12880
+  3. [cos=0.8776] An FNet based Auto Encoder for Long Sequence News Story Generation
+     cs.CL · 2022 · arXiv:2211.08295
+  4. [cos=0.8774] Mitigating Vanishing Activations in Deep CapsNets Using Channel Pr
+     cs.CV · 2024 · arXiv:2410.16908
+  5. [cos=0.8719] Denoising: from classical methods to deep CNNs
+     cs.CV · 2024 · arXiv:2404.16617
+
+--- ГІБРИДНИЙ RRF, k=60 (топ-5) ---
+  1. [RRF=0.02964] Two-stream convolutional networks for end-to-end learning of
+     cs.LG · 2018 · arXiv:1811.05785   (BM25 #9 / vec #6)
+  2. [RRF=0.01639] Global Convergence of Deep Networks with One Wide Layer Foll
+     cs.LG · 2020 · arXiv:2002.07867   (BM25 #1 / —)
+  3. [RRF=0.01639] DenseNet Models for Tiny ImageNet Classification
+     cs.CV · 2019 · arXiv:1904.10429   (— / vec #1)
+  4. [RRF=0.01613] Doubly Convolutional Neural Networks
+     cs.LG · 2016 · arXiv:1610.09716   (BM25 #2 / —)
+  5. [RRF=0.01613] Advanced deep architecture pruning using single filter perfo
+     cs.LG · 2025 · arXiv:2501.12880   (— / vec #2)
+
+  Перетин BM25 ∩ вектор (топ-5): 0
+  Документів у гібридному топ-5, яких немає в жодному з топ-5: 1
+    + Two-stream convolutional networks for end-to-end learning  (BM25 #9, vec #6)
+
+  --- Вплив k у RRF (топ-3) ---
+    k=   1: Global Convergence of Deep | DenseNet Models for Tiny I | Doubly Convolutional Neura
+    k=  10: Two-stream convolutional n | Global Convergence of Deep | DenseNet Models for Tiny I
+    k=  60: Two-stream convolutional n | Global Convergence of Deep | DenseNet Models for Tiny I
+    k=1000: Two-stream convolutional n | Global Convergence of Deep | DenseNet Models for Tiny I
+
+==============================================================================
+ЗАПИТ (перефразування): "making computers understand human emotions from text"
+==============================================================================
+
+--- BM25 (топ-5) ---
+  1. [bm25=24.2722] EmoSpeech: Guiding FastSpeech2 Towards Emotional Text to Speech
+     eess.AS · 2023 · arXiv:2307.00024
+  2. [bm25=16.7424] Knowledge-Enriched Transformer for Emotion Detection in Textual   
+     cs.CL · 2019 · arXiv:1909.10681
+  3. [bm25=15.1116] Revisiting Text-to-Image Evaluation with Gecko: On Metrics, Prompt
+     cs.CV · 2024 · arXiv:2404.16820
+  4. [bm25=13.2568] Conformal Prediction Sets Improve Human Decision Making
+     cs.LG · 2024 · arXiv:2401.13744
+  5. [bm25=13.0467] MoEmo Vision Transformer: Integrating Cross-Attention and Movement
+     cs.CV · 2023 · arXiv:2310.09757
+
+--- ВЕКТОРНИЙ / Pinecone (топ-5) ---
+  1. [cos=0.8723] Knowledge-Enriched Transformer for Emotion Detection in Textual   
+     cs.CL · 2019 · arXiv:1909.10681
+  2. [cos=0.8625] Proactive Emotion Tracker: AI-Driven Continuous Mood and Emotion  
+     cs.HC · 2024 · arXiv:2401.13722
+  3. [cos=0.8620] EmoVIT: Revolutionizing Emotion Insights with Visual Instruction T
+     cs.CV · 2024 · arXiv:2404.16670
+  4. [cos=0.8604] Explainable Sentence-Level Sentiment Analysis for Amazon Product R
+     cs.CL · 2021 · arXiv:2111.06070
+  5. [cos=0.8569] Urdu Speech and Text Based Sentiment Analyzer
+     cs.CL · 2022 · arXiv:2207.09163
+
+--- ГІБРИДНИЙ RRF, k=60 (топ-5) ---
+  1. [RRF=0.03252] Knowledge-Enriched Transformer for Emotion Detection in Text
+     cs.CL · 2019 · arXiv:1909.10681   (BM25 #2 / vec #1)
+  2. [RRF=0.01639] EmoSpeech: Guiding FastSpeech2 Towards Emotional Text to Spe
+     eess.AS · 2023 · arXiv:2307.00024   (BM25 #1 / —)
+  3. [RRF=0.01613] Proactive Emotion Tracker: AI-Driven Continuous Mood and Emo
+     cs.HC · 2024 · arXiv:2401.13722   (— / vec #2)
+  4. [RRF=0.01587] Revisiting Text-to-Image Evaluation with Gecko: On Metrics, 
+     cs.CV · 2024 · arXiv:2404.16820   (BM25 #3 / —)
+  5. [RRF=0.01587] EmoVIT: Revolutionizing Emotion Insights with Visual Instruc
+     cs.CV · 2024 · arXiv:2404.16670   (— / vec #3)
+
+  Перетин BM25 ∩ вектор (топ-5): 1
+  Документів у гібридному топ-5, яких немає в жодному з топ-5: 0
+
+  --- Вплив k у RRF (топ-3) ---
+    k=   1: Knowledge-Enriched Transfo | EmoSpeech: Guiding FastSpe | Proactive Emotion Tracker:
+    k=  10: Knowledge-Enriched Transfo | EmoSpeech: Guiding FastSpe | Proactive Emotion Tracker:
+    k=  60: Knowledge-Enriched Transfo | EmoSpeech: Guiding FastSpe | Proactive Emotion Tracker:
+    k=1000: Knowledge-Enriched Transfo | EmoSpeech: Guiding FastSpe | Proactive Emotion Tracker:
+
+==============================================================================
+ПІДСУМКОВА ТАБЛИЦЯ: 3 запити × 3 методи (документ на першому місці)
+==============================================================================
+         запит                                    BM25 #1                                  Вектор #1                                     RRF #1
+ точний термін Portuguese Named Entity Recognition using     Developing a Successful Bomberman Agent Portuguese Named Entity Recognition using 
+   ім'я автора Global Convergence of Deep Networks with O DenseNet Models for Tiny ImageNet Classifi Two-stream convolutional networks for end-
+перефразування EmoSpeech: Guiding FastSpeech2 Towards Emo Knowledge-Enriched Transformer for Emotion Knowledge-Enriched Transformer for Emotion

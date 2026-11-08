@@ -108,6 +108,13 @@ def chunk_semantic(text: str, max_words: int = CHUNK_WORDS) -> list[str]:
 
 
 def starts_mid_sentence(chunk: str) -> bool:
+    """
+    Груба евристика: чанк вважається розрізаним, якщо починається не з
+    великої літери. Це ОЦІНКА ЗНИЗУ — чанк, що почався з власної назви
+    посеред речення ("ImageNet results show..."), сюди не потрапить.
+    Точніший підрахунок (звірка з реальними межами речень) дає ~80%
+    проти 76% у цієї евристики; висновок від цього не змінюється.
+    """
     first = chunk.lstrip()[:1]
     return bool(first) and not (first.isupper() or first in "([")
 
